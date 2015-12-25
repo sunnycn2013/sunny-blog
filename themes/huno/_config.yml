@@ -1,8 +1,8 @@
 # Header
 menu:
   首页: /#blog
-  关于: /about
-  归档: /archive
+  关于: /huno/about
+  归档: /huno/archive
 
 # Site favicon
 favicon: /favicon.png
