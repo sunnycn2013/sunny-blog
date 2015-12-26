@@ -31,7 +31,7 @@
 
               <% for (var i in theme.menu){ %>
                 <%
-                  if (theme.menu[i]+'' == '/huno/#blog') {
+                  if (theme.menu[i]+'' == '/#blog') {
                     nav_btn_class = 'blog-button';
                   } else {
                     nav_btn_class = '';
@@ -43,10 +43,9 @@
             </ul>
           </nav>
 
-          <%- partial('_partials/social') %>
 
         </div>
-
+            <%- partial('_partials/social') %>
       </div>
 
     </div>

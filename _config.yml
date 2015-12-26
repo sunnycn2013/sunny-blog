@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: sunny blog
-subtitle:
+title: 风之痕
+subtitle: hello 大家好，我叫sunny，目前就职于360buy...
 description:
-author: John Doe
+author: sunny
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
-root: /huno/
+url: http://sunnyvalue.github.io
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -63,7 +63,28 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: huno
+theme: huno #light #huno
+
+# 评论模块
+disqus_shortname: wwwccguocn
+
+#社交模块
+social:
+  weibo: ccguo
+	github: sunnyvalue
+	twitter: ccguo
+	mail: 389878212@qq.com
+	stackoverflow: ccguo
+#twitter_username:  ccguo
+#facebook_username:  ccguo
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id: a9e25a3a4b0c78f0018bc2c1f73d26b7
+# Google Analytics
+ga_track_id: 'UA-49627206-1'
+ga_domain: ccguo.cn
+
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html

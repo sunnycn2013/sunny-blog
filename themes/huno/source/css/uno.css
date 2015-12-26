@@ -4,7 +4,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-/*@import url(../css/animate.css);*/
+@import url(../css/animate.css);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -735,6 +735,13 @@ body {
 
 .icon-social-squidoo:before {
   content: "\f1de"; }
+/* add by sunny  weibo \f18a */
+.icon-social-weibo:before {
+  content:"\f33f";  }
+
+.icon-social-renren:before {
+  content:"\f18b"; }
+  
 
 .icon-social-stack-overflow:before {
   content: "\f1df"; }
@@ -926,7 +933,7 @@ html {
 body {
   /*font-family: "Raleway", sans-serif;*/
   font-family:  "Raleway",Verdana,sans-serif,宋体, serif, "Droid Serif", Helvetica Neue, Helvetica, Arial;
-  font-size: 1em;
+  font-size: 0.9em;
   color: #666666; }
 
 ::selection {
@@ -1200,7 +1207,7 @@ hr {
   background-size: cover; }
 
 .panel-cover--collapsed {
-  width: 32%;
+  width: 30%;
   max-width: 430px; }
 
 .panel-cover--overlay {
@@ -1297,6 +1304,20 @@ hr {
 .btn, .navigation__item a {
   padding: 10px 20px;
   border: 1px solid #006699;
+  border-radius: 20px;
+  font-size: .9em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: none;
+  color: #006699;
+  -webkit-font-smoothing: antialiased; }
+  .btn:hover, .navigation__item a:hover {
+    color: #006699;
+    border-color: #006699; }
+
+.btn, .navigation__item_social a {
+  padding: 10px 20px;
+  *border: 0px solid #006699;
   border-radius: 20px;
   font-size: .9em;
   font-weight: bold;
@@ -1440,6 +1461,16 @@ i {
   margin: .7em 0 0 0;
   font-size: .9em;
   color: #c7c7c7; }
+
+/*  add sunny */
+.btn-border-small {
+  border: 1px solid #BF1827;
+  border-radius: 20px;
+  padding: 6px 8px;
+  font-size: .8em;
+  margin-left: 10px;
+  color:#BF1827;}
+
 
 .post-list__meta--date {
   margin-right: .5em;
