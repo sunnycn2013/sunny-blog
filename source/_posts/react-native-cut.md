@@ -11,10 +11,10 @@ tags:
 
 
 
-##React-Native牛刀小试仿京东砍啊砍砍到你手软
+## React-Native牛刀小试仿京东砍啊砍砍到你手软
 
 
-###React-Native基础教程
+### React-Native基础教程
 
 
 *[React-Native基础篇](http://www.cnblogs.com/vczero/p/react-native.html)[作者git](https://github.com/vczero/react-native-lession)
@@ -47,7 +47,7 @@ tags:
 如果你之前从未写过任何 JavaScript ，别担心；这篇教程带着你一点一点编写代码。React 使用 CSS 属性来定义样式，这些样式通常都很易于阅读和理解，但是如果你想进一步了解，可以参考:。
 要想学习更多内容，请往下看
 
-###开始
+### 开始
 React native 关于环境搭建问题此处就不多说了，详情请见[React native基础教程](http://www.cnblogs.com/vczero/p/react-native.html),此处就从我们已经准备好一切前序工作开始，万事具备只欠东风，下面开始:
 
 首先React Native 启动画面开始，创建helloworld工程，启动画面如下：
@@ -71,7 +71,7 @@ React native 关于环境搭建问题此处就不多说了，详情请见[React 
 React Native完成的js完成的代码其实是跑在本地的node下面的，从appdelegate里面可以看到React Native工程会从一个本机地址“http://localhost:8081/index.ios.bundle?platform=ios&dev=true"读取一个对应的文件，这个文件中就是系统已经自动帮你打包压缩整合过以后的一个js 代码库，接下来React Native引擎会将这个库中的js代码完全的解析、翻译成对应的iOS原生内容，最终以iOS原生UI的形式渲染到桌面上，这个就是React Native整个工作流程。
 
 
-###你好， React Native
+### 你好， React Native
 
 
 在开始编写这个demo之前我们先创建一个简单的Hello World项目，用你喜欢的文本编辑器（例如Sublime Text）打开index.ios.js ，删除所有内容。然后加入以下语句：
@@ -101,7 +101,7 @@ AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 ```
 好了，“Hello World” 的演示就到此为止；接下来我们要编写一个真正的React App了！
 
-###创建一个导航
+### 创建一个导航
 
 这个demo使用了标准的UIKit中的导航控制器来提供”栈式导航体验“。接下来我们就来实现这个功能。
 
@@ -125,7 +125,7 @@ var HelloWorld = React.createClass(//{
 
 NavigatorIOS就是React Native中对应的导航视图，我们再次暂时可以理解就是iOS中的UINavigationController,我们在此处创建了一个基于导航的视图控制器，rootViewController对应的页面就是Home。
 
-###创建rootView Home，添加Home.js 文件，添加代码如下：
+### 创建rootView Home，添加Home.js 文件，添加代码如下：
 
 
 ```
@@ -156,7 +156,7 @@ Home 我们只放了一个按钮，按钮文字“go to cut”，另外添加了
 ![react-native-00.png](http://ccguo.gitcafe.io/blog/2015-12-16/post-react-native-cut/react-native-00.png)
 ### 构建砍啊砍List页面，从网络获取数据，绘制table绑定事件
 
-####构造顶部bunner动画图
+#### 构造顶部bunner动画图
 
 
 轮播图这个地方采用了React Native的一个第三方库swiper(偷懒了)，
@@ -215,7 +215,7 @@ render:function () \\{
 > * renderRow   cell绑定函数事件(等价于tableView:cellForRowAtIndexPath:)
 > * automaticallyAdjustContentInsets UI布局相关的
 
-####初始化数据源
+#### 初始化数据源
 
 
 ```
@@ -235,7 +235,7 @@ getInitialState:function(){
 
 getInitialState:function()类似于OC中的init函数，我们一般的习惯喜欢在init函数初始化一个变量等数据，在React Native依旧是这样。
 
-####发起网络请求，获取数据，缓存在全局变量List中
+#### 发起网络请求，获取数据，缓存在全局变量List中
 
 
 ```
@@ -339,7 +339,7 @@ _renderRow:function(data,sectionID,rowID)。
 
 ![react-native-02.png](http://ccguo.gitcafe.io/blog/2015-12-16/post-react-native-cut/react-native-02.png)
 
-####处理cell跳转事件
+#### 处理cell跳转事件
 
 
 ```
@@ -369,7 +369,7 @@ React在处理事件跳转的时间，仍旧采用进栈出栈的形式，这一
 
 ![react-native-01.png](http://ccguo.gitcafe.io/blog/2015-12-16/post-react-native-cut/react-native-01.png)
 
-###接下来做什么
+### 接下来做什么
 
 
 恭喜你，你的第一个React Native App终于完成了！你可以在GitHub上找到每一个”可运行的“步骤的项目源文件，如果你搞不定的时候它们会非常有用的 :]

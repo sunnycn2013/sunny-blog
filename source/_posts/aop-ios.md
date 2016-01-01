@@ -14,7 +14,7 @@ tags:
 
 
 
-##1. AOP简介
+## 1. AOP简介
 
 AOP: Aspect Oriented Programming 面向切面编程。
 
@@ -34,7 +34,7 @@ AOP: Aspect Oriented Programming 面向切面编程。
 
 注意：AOP不是一种技术，实际上是编程思想。凡是符合AOP思想的技术，都可以看成是AOP的实现
 
-##2. iOS中的AOP
+## 2. iOS中的AOP
 
 利用 Objective-C 的 Runtime 特性，我们可以给语言做扩展，帮助解决项目开发中的一些设计和技术问题。这一篇，我们来探索一些利用 Objective-C Runtime 的黑色技巧。这些技巧中最具争议的或许就是 Method Swizzling 。
 
@@ -50,11 +50,11 @@ AOP: Aspect Oriented Programming 面向切面编程。
 1. 它破坏了代码的干净整洁。
 （因为 Logging 的代码本身并不属于 ViewController 里的主要逻辑。随着项目扩大、代码量增加，你的 ViewController 里会到处散布着 Logging 的代码。这时，要找到一段事件记录的代码会变得困难，也很容易忘记添加事件记录的代码）
 
-##3. iOS AOP实战
+## 3. iOS AOP实战
 
 **玩转 Method Swizzling**
 
-####1.事务拦截，安全可变容器
+#### 1.事务拦截，安全可变容器
  iOS中有各类容器的概念，容器分可变容器和非可变容器，可变容器一般内部在实现上是一个链表，在进行各类（insert 、remove、 delete、 update ）难免有空操作、指针越界的问题。
 最粗暴的方式就是在使用可变容器的时间，每次操作都必须手动做空判断、索引比较这些操作:
 ```
@@ -150,7 +150,7 @@ safeAddObject 代码看起来可能有点奇怪，像递归不是么。当然不
 
 [Demo](http://https://github.com/ccguo/1-SwizzlingMethod-.git)
 #### 2. Aspects 一个基于Objective-c的AOP开发框架
-######业务埋点、日志打印分离
+###### 业务埋点、日志打印分离
 
 相信大多童鞋们在重构代码的时间经常会从一些问题入手，例如轻量级controller、MVVM等，这些无非是对原有逻辑进一步抽象、区分、分离，重新抽象数据模型、viewmodel；相关代码放入分类；考虑业务层次抽取剥离父类；mananger、factory等。经历一大翻工作controller 中代码终于减少了，但是仍旧留下一堆的埋点、日志log的相关代码。
 

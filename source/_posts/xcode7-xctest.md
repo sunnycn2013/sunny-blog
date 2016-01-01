@@ -16,7 +16,7 @@ tags:
 # Xcode 7智能测试化工具XCTest学习
 
 
-##1. 单元测试简介
+## 1. 单元测试简介
 
 ####  1.1、Unit Testing: 单元测试
 
@@ -43,7 +43,7 @@ tags:
 下面介绍一下Xcode7 中现有的一些测试工具：
 
 
-##2. Xcode7中的UnitTest
+## 2. Xcode7中的UnitTest
 
 ####  2.1、XCTest介绍
 
@@ -200,9 +200,9 @@ Xcode7 提供了一个内置的Code Coverage工具组件，废话不说，下面
 
 ![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-trackDao.png)
 
-##3. Xcode7中的UITest
+## 3. Xcode7中的UITest
 
-####UnitTest简介
+#### UnitTest简介
 
 任何软件开发中，自动化UI测试都是很重要的(UI自动化测试的好处此处就不再多说了),iOS平台在以往是通过UIAutomation来完成自动化UI测试的，它的测试用例是javascript写的(Instruments中提供了该功能)，这个过程深奥繁琐，需要自行编写对应的测试脚本，速度慢，学习成本高(关于Automation自动化测试概念大家可以查看相关的资料，Automation自动化测试在各大平台都有应用，在大型的软件开发测试过程的确的确可以节省大量的手工测试人员，大大提高软件测试的成本与效率，在最新Xcode7本文推荐使用Apple提供的最新的工具UITest)。
 
@@ -281,9 +281,9 @@ UITest中同样适用以下断言等：
 关于Xcode 7 UnitTest的问题就讲到此处，希望有兴趣的同学大家共同交流...
 
 
-##4. 小结
+## 4. 小结
 
-####1.总结现有问题，分享心得
+#### 1.总结现有问题，分享心得
 Xcode6的内置工具终于足够的好了。也就是说即使是很大的APP也没有必要为了单元测试的代码覆盖率而排斥Xcode内置的测试工具。无论什么样的测试，XCTest的各种断言、expectation和性能测试都足够应对。但是无论多好的工具，都需要用好才行。
 
 如果你在测试iOS或者OS X的APP，开始为自动添加的测试类添加一些断言并按下Command+U。你一定会发现感觉这些工具让你的测试方便不少 。
