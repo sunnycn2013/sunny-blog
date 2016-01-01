@@ -43,7 +43,7 @@ tags:
 下面介绍一个简单的demo操作，这个教程一起带你去体验一下京东促销砍啊砍页面的OC->React 移植过程，通过本教程你就可以了解React Native的一些基本开发流程了。
 效果：
 
-![react-native-01.png](http://upload-images.jianshu.io/upload_images/664426-be6211dc7dc0c5f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![react-native-01.png](http://ccguo.gitcafe.io/blog/2015-12-16/post-react-native-cut/react-native-01.png)
 如果你之前从未写过任何 JavaScript ，别担心；这篇教程带着你一点一点编写代码。React 使用 CSS 属性来定义样式，这些样式通常都很易于阅读和理解，但是如果你想进一步了解，可以参考:。
 要想学习更多内容，请往下看
 
@@ -53,12 +53,12 @@ React native 关于环境搭建问题此处就不多说了，详情请见[React 
 首先React Native 启动画面开始，创建helloworld工程，启动画面如下：
 
 
-![ReactNative-Starter.png](http://upload-images.jianshu.io/upload_images/664426-9cfbd5ec5a41dc1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![ReactNative-Starter.png](http://ccguo.gitcafe.io/blog/2015-12-16/post-react-native-cut/ReactNative-Starter.png)
 
 与此同时Xcode还会打开一个终端窗口，并显示如下信息：
 
 
-![termial.png](http://upload-images.jianshu.io/upload_images/664426-5daec4124c4cc227.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![termial.png](http://ccguo.gitcafe.io/blog/2015-12-16/post-react-native-cut/termial.png)
 
 这是React Navtive Packager，它在node容器中运行。你待会就会发现它的用处。
 千万不要关闭这个窗口，让它一直运行在后面。如果你意外关闭它，可以在Xcode中先停止程序，再重新运行程序。
@@ -153,7 +153,7 @@ var Home = React.createClass({
 
 Home 我们只放了一个按钮，按钮文字“go to cut”，另外添加了一个点击触摸事件，事件相应题是goToNext:function();   在函数处理事件内部，我们只做了页面的push跳转，目标页面是cutList页面，运行效果如下：
 
-![react-native-00.png](http://upload-images.jianshu.io/upload_images/664426-8babed8f0881c5cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![react-native-00.png](http://ccguo.gitcafe.io/blog/2015-12-16/post-react-native-cut/react-native-00.png)
 ### 构建砍啊砍List页面，从网络获取数据，绘制table绑定事件
 
 ####构造顶部bunner动画图
@@ -277,12 +277,12 @@ componentDidMount:function(){
 
 ```
 
-    这个过程模拟了在iOS原生应用里面，初始化网络request，发起网络请求，得到数据，解析数据，然后将数据存入list这一些列操作，其实在js中，js脚本处理json的能力还是很强的，我们再也不需要像OC中哪些objectForKey:的操作了，我们不需要任何MJExtension、JSONModel、 Mantle等一些潜在的工具了，省去了很多的麻烦，我们直接拿到一个json对象，直接对对象进行操作。
 
-    另外React的网络请求此处我们只是使用了fetch API
-[脸谱官方的api](http://facebook.github.io/react-native/docs/network.html#content)(脸谱对于网络请求提供了多种API，如：fetch WebSocket XMLHttpRequest等，具体可参照API)
+这个过程模拟了在iOS原生应用里面，初始化网络request，发起网络请求，得到数据，解析数据，然后将数据存入list这一些列操作，其实在js中，js脚本处理json的能力还是很强的，我们再也不需要像OC中哪些objectForKey:的操作了，我们不需要任何MJExtension、JSONModel、 Mantle等一些潜在的工具了，省去了很多的麻烦，我们直接拿到一个json对象，直接对对象进行操作。
 
-    从代码上看js的链式编程刚看上去有点不太习惯，不过整体使用起来还是比OC中快捷多了，foreach遍历、消息队列进出栈，总之脚步里面省去了以往还不得不在意的好多麻烦，其实这块相对swift而言，新的版本中渐渐的已经得到了部分提升，不过还是要感谢脸谱团队，没有他们，可能还见识不到React的强大。
+另外React的网络请求此处我们只是使用了fetch API[脸谱官方的api](http://facebook.github.io/react-native/docs/network.html#content)(脸谱对于网络请求提供了多种API，如：fetch WebSocket XMLHttpRequest等，具体可参照API)
+
+从代码上看js的链式编程刚看上去有点不太习惯，不过整体使用起来还是比OC中快捷多了，foreach遍历、消息队列进出栈，总之脚步里面省去了以往还不得不在意的好多麻烦，其实这块相对swift而言，新的版本中渐渐的已经得到了部分提升，不过还是要感谢脸谱团队，没有他们，可能还见识不到React的强大。
 
 
 #### 构建cell
@@ -337,7 +337,7 @@ _renderRow:function(data,sectionID,rowID)。
 
 整体运行效果如下：
 
-![react-native-02.png](http://upload-images.jianshu.io/upload_images/664426-08fbbb3e93c8baca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![react-native-02.png](http://ccguo.gitcafe.io/blog/2015-12-16/post-react-native-cut/react-native-02.png)
 
 ####处理cell跳转事件
 
@@ -367,9 +367,7 @@ React在处理事件跳转的时间，仍旧采用进栈出栈的形式，这一
 到了目标页面后，我们直接从props容器直接根据key就能将传递的参数去处，此处我们传递参数的本身是一个json,我们只是讲wname显示到detail页面。
 效果如下：
 
-
-![
-![react-native-01.png](http://upload-images.jianshu.io/upload_images/664426-914333aee7cd22ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)](http://upload-images.jianshu.io/upload_images/664426-b3b381e0788ffc9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![react-native-01.png](http://ccguo.gitcafe.io/blog/2015-12-16/post-react-native-cut/react-native-01.png)
 
 ###接下来做什么
 
