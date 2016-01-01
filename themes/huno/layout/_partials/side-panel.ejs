@@ -11,18 +11,31 @@
     <div class="panel-main__content">
 
         <% if (theme.logo) { %>
-        <a href="/" title="link to homepage for <%= config.title %>"><img src="<%= theme.logo %>" width="80" alt="<%= config.title %> logo" class="panel-cover__logo logo" /></a>
+        <a href="/" title="link to homepage for <%= config.title %>"><img src="/images<%= theme.logo %>" width="80" alt="<%= config.title %> logo" class="panel-cover__logo logo" /></a>
         <% } %>
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage"><%= config.title %></a></h1>
+        <h1 class="panel-cover__title panel-title">
+          <a href="/" title="link to homepage"><%= config.title %></a>
+        </h1>
+
+        <span class="panel-cover__subtitle">
+            <%= config.subtitle %> 
+        </span>
         <hr class="panel-cover__divider" />
 
-        <% if (config.subtitle) { %>
+        <% if (config.description) { %>
         <p class="panel-cover__description">
-          <%= config.subtitle %>
+            <%= config.description %>
         </p>
+
         <hr class="panel-cover__divider panel-cover__divider--secondary" />
         <% } %>
+
+        <p class="panel-cover__description">
+            <a href="http://www.sunnyvalue.github.io" target="_blank">
+                <%= config.tips %>
+            </a>
+        </p>
 
         <div class="navigation-wrapper">
 

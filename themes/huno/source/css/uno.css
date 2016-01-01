@@ -735,13 +735,12 @@ body {
 
 .icon-social-squidoo:before {
   content: "\f1de"; }
-/* add by sunny  weibo \f18a */
+/* add by sunny  weibo \f18a  content:"\f33f"; */
 .icon-social-weibo:before {
-  content:"\f33f";  }
+  content:"\f33f"; }
 
 .icon-social-renren:before {
   content:"\f18b"; }
-  
 
 .icon-social-stack-overflow:before {
   content: "\f1df"; }
@@ -1184,7 +1183,7 @@ hr {
 
 .panel-title {
   margin: 0 0 5px 0;
-  font-size: 2.5em;
+  font-size: 2.7em;
   letter-spacing: 4px;
   color: #FFF; }
 
@@ -1226,7 +1225,16 @@ hr {
 .panel-cover__logo {
   margin-bottom: .2em; }
 
+.panel-cover__subtitle {
+  font-size: 1.4em;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  color: #CCCCCC;
+  -webkit-font-smoothing: antialiased;
+  background-color: rgba(68, 68, 68, 0.2); }
+
 .panel-cover__description {
+  font-size: 1.1em;
   margin: 0 30px; }
 
 .panel-cover__divider {
