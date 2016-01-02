@@ -54,7 +54,7 @@ tags:
 #####  2.1、XCTestCase简介
 如果项目创建的时间勾选了UnitTest(从名字上看就是Apple提供的官方的一个单元测试工具) ，我们可以看到工程里面是多了一个目录，默认多了一个类， 如图：
 
-![选择XCTest](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-createpro.png)
+![选择XCTest](/images/2015-12-16/post-xctest-case/xctest-case-createpro.png)
 
 
 XCTest时Apple官方提供一个测试工具，一个内置的测试框架，从工程里面可以看到，一个“应用名称”的group，我们直接可以使用commond+R 来远行，一个测试的target我们可以使用commond+U来远行测试target,在测试target的目录下会有一个默认的“应用名称”＋Test的类，这个类只有.m没有.h,继承于XCTestCase，使用commond+U即可运行。
@@ -177,28 +177,28 @@ Xcode7 提供了一个内置的Code Coverage工具组件，废话不说，下面
 
 1、首先需要在product->scheme->Edit Scheme里面将Code Coverage模式打开，选中为debug模式，如图:
 
-![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-selectschem.png)
+![Edit Scheme](/images/2015-12-16/post-xctest-case/xctest-case-selectschem.png)
 
-![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-editschem.png)
+![Edit Scheme](/images/2015-12-16/post-xctest-case/xctest-case-editschem.png)
 
 2、打开Code Coverage模式之后，打开某个测试类，commond+U 运行，如果测试通过，测试脚本的函数头上会出现一个绿色的标志(相反如何哪一个方法测试没有通过，则会提示一个红色错误)，如下:
 
-![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-testsucc.png)
+![Edit Scheme](/images/2015-12-16/post-xctest-case/xctest-case-testsucc.png)
 
 3、打开Xcode左边窗口的Report Navigator，找到 Project Log,选择最近一次的log选项，最近一次是刚才的一个Test Log,选择中这个Log实例，可以看到一下界面,
 如图:
 
-![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-testlog.png)
+![Edit Scheme](/images/2015-12-16/post-xctest-case/xctest-case-testlog.png)
 
 然后在tab中选中 Coverage，此时你可以看到大致的代码执行覆盖情况，如果指示条是满的则代表该类代码全部跑过一遍。
 
-![xctest-case-coverage.png](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-coverage.png)
+![xctest-case-coverage.png](/images/2015-12-16/post-xctest-case/xctest-case-coverage.png)
 
 4、双击你想要查看的类，此处选择查看UATrackDao，打开后既可以看到刚刚的测试中有哪些代码是执行过的，那些代码时未执行的，橘黄色的代表还未执行的，执行过的每一行后面会有一个序号代表这行代码在刚才的测试过程中执行的次数。如果有未执行的，可根据具体的情况调整对应的测试脚本，继续测试，最终确保每一行代码都能正确执行,如图:
 
 ![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-coverageItem.png)
 
-![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-trackDao.png)
+![Edit Scheme](/images/2015-12-16/post-xctest-case/xctest-case-trackDao.png)
 
 ## 3. Xcode7中的UITest
 
@@ -216,27 +216,27 @@ Xcode 7已经集成了UITest，UITest允许你找到UI元素并与之交户，�
 
 创建模态视图，我们选择从第一个VC通过点击按钮的形式push到第二个VC
 
-![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-UItestIB.jpeg)
+![Edit Scheme](/images/2015-12-16/post-xctest-case/xctest-case-UItestIB.jpeg)
 
 创建UITest target，我们对上述UI进行测试 如图选项:
 
-![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-createUITestSelectItem.jpeg)
+![Edit Scheme](/images/2015-12-16/post-xctest-case/xctest-case-createUITestSelectItem.jpeg)
 
-![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-createUITestPro.jpeg)
+![Edit Scheme](/images/2015-12-16/post-xctest-case/xctest-case-createUITestPro.jpeg)
 
 
 打开UATrackDemoUiTest.m,创建 - (void)testUI,同时将光标留在函数内
 
-![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-uitestStart.jpeg)
+![Edit Scheme](/images/2015-12-16/post-xctest-case/xctest-case-uitestStart.jpeg)
 
 点击下面的红色按钮，开始recorder操作，程序运行起来后，点击界面上的按钮，程序会push到一个新的页面，这个时间会看到到刚才的鼠标光标处自动生成了一部分代码，重复操作，每次都会生成新的代码,如图：
 
-![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/xctest-case-uitestcode.jpeg)
+![Edit Scheme](/images/2015-12-16/post-xctest-case/xctest-case-uitestcode.jpeg)
 
 
 从新点击小红点按钮，此时结束recorder操作，commond+U 运行测试，此时刚才的一连串动作会一步一步连续执行下来:
 
-![Edit Scheme](http://ccguo.gitcafe.io/blog/2015-12-16/post-xctest-case/end.gif)
+![Edit Scheme](/images/2015-12-16/post-xctest-case/end.gif)
 
 此处声明: 第一次点击红色的recorder按钮，然后手动操作会自动生成测试脚本，第二次commond+U是进行测试UI
 

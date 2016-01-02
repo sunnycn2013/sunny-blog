@@ -118,7 +118,7 @@ view model是一个放置用户输入验证逻辑，视图显示逻辑，发起�
 
 传统web架构里面是这样解决的 : 
 
-![service](http://ccguo.gitcafe.io/blog/2015-12-16/MVP/service.png) 
+![service](/images/2015-12-16/MVP/service.png) 
 
 
 web段以及其他业务层负责从接口层获取数据 并执行自己的逻辑
@@ -128,7 +128,7 @@ DB层(物理机器负责数据存储)
 
 现有客户度一度采用下面的模式:
 
-![MVC](http://ccguo.gitcafe.io/blog/2015-12-16/MVP/mvc.png) 
+![MVC](/images/2015-12-16/MVP/mvc.png) 
 
 客户端通过service拿到json 数据，然后通过MVC的结构展示到UI界面上，在iOS中一直流行MVC的开发模式，通过与传统开发模式对比可以发现，其实
 service层与客户端无非是两个互逆的过程，service层根据具体的业务场景提供对应的数据服务，service根据不同的业务场景通过DTO层拿到对应
@@ -140,7 +140,7 @@ service层与客户端无非是两个互逆的过程，service层根据具体的
 为满足相同抽象逻辑的业务场景，在客户端网络层与model层之间加一协议层，model层实现整个协议层，之后在基于MVC的结构下将一概相同层次的
 业务场景绘制解释到对应的View上。
 
-![MVP](http://ccguo.gitcafe.io/blog/2015-12-16/MVP/mvp.png) 
+![MVP](/images/2015-12-16/MVP/mvp.png) 
 
 M : 逻辑model
 V : 视图
