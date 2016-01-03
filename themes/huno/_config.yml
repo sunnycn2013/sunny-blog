@@ -2,7 +2,8 @@
 menu:
   首页: /#blog
   归档: /archives
-  关于: /about
+#  分类: /categorys
+  关于: /abouts
 
 
 # Site favicon

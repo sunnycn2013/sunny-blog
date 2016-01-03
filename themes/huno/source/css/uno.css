@@ -1740,3 +1740,45 @@ th, td {
 pre {
   font-family: 
 }
+
+/* archive css*/
+.archive-main {
+  min-height: 500px;
+  height: 500px auto;
+}
+
+.archive-item {
+  margin-top:2px;
+  background: white;
+}
+
+.arichive-list dt{
+  margin: 10px 0 0;
+  position: relative;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #4BA96A;
+}
+
+.arichive-list dt span{
+  padding-right: 5px;
+  color: #ccc;
+}
+.archive-item a{
+    text-transform: uppercase;
+    font-size: 1.0rem;
+    line-height: 180%;
+    color: #5B5F5E;
+    transition: padding .2s ease-out;
+}
+
+.archive-item em{
+    float: right;
+    margin-top: 7px;
+    font-size: 12px;
+    padding: 1px 6px;
+    border-radius: 2px;
+    background: #f1f1f1;
+    color: #999;
+}
+
