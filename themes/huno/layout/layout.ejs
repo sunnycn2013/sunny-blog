@@ -3,6 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <!-- js files -->
+    <script src="<%- config.root %>js/jquery.min.js"></script>
+    <script src="<%- config.root %>js/main.js"></script>
+    <script src="<%- config.root %>js/scale.fix.js"></script>
 
     <%
     var title = page.title || '';
@@ -74,10 +78,6 @@
         </div>
     </div>
 
-    <!-- js files -->
-    <script src="<%- config.root %>js/jquery.min.js"></script>
-    <script src="<%- config.root %>js/main.js"></script>
-    <script src="<%- config.root %>js/scale.fix.js"></script>
     
 
     <%- partial('_scripts/mathjax') %>

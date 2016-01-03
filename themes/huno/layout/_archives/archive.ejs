@@ -6,9 +6,10 @@
     <div class="arichive-list">
       <% var year = date(post.date, config.archive_date_format_for_title); %>
       <% if(year !=last){ %>
-        <dt>
-          <span><%= year %></span>
-          "<%=months[post.date.month()] %>"
+        <dt class="arichive-list-header"></dt>
+        <dt class="arichive-list-title">
+          <span><%= year%></span>
+          <%=months[post.date.month()] %>
         </dt>
         <% last = year; %>
       <% } else{ %>
@@ -28,3 +29,11 @@
   <% }) %>
 
 </div>
+
+<script type="text/javascript"> 
+  $(".archive-item").hover(function(){
+    $(this).animate({background:'green'},"slow");
+  },function(){
+    $(this).animate({background:'white'},"slow");
+  });
+</script>
