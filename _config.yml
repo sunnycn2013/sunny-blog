@@ -7,6 +7,8 @@ title: 风之痕
 subtitle: 上善若水 人淡如菊...
 description: hello 大家好，我是sunny，目前就职于360buy...
 tips: sunnyvalue.github.io - 我维护的 iOS 使用技巧分享网站，每周三更新，欢迎访问..
+descriptions: "关于前端与iOS、React,ReactNative、黑客与画家 | 如画，Web & Mobile Lover，iOS Engineer,移动端 | 这里是 @风之痕 的个人博客，与你一起发现更大的世界。"
+keyword: "iOS, 移动端,前端, C#,风之痕, 风之痕的博客,@sunnyvalue,@Charles的博客,@xianbin的博客, 个人网站, 互联网, 前端, 设计, 产品"
 author: sunny
 language:
 timezone:
@@ -83,11 +85,25 @@ social:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: a9e25a3a4b0c78f0018bc2c1f73d26b7
+ba_track_id: c6e987eefac5b457dcad34a960ecf0b0 #a9e25a3a4b0c78f0018bc2c1f73d26b7
 # Google Analytics
 ga_track_id: 'UA-49627206-1'
 ga_domain: ccguo.cn
 
+#sitemap
+baidusitemap:
+  path: baidusitemap.xml
+
+# Friends
+friends: [
+    {
+        title: "xianbin的博客",
+        href: "http://www.xiexianbin.cn/"
+    },{
+        title: "Charles的博客",
+        href: "http://hmqk1995.github.io"
+    }
+]
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html

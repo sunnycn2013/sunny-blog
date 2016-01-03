@@ -38,12 +38,12 @@
     %>
 
     <title>
-      <%= title %> 
+      <%= title %>  <%=config.keyword %>
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <% if (config.author){ %>
-      <meta name="author" content="<%= config.author %>">
+      <meta name="author" content="<%= config.author + '|'+ config.descriptions %>">
     <% } %>
     <% if ( is_home() && config.description){ %>
       <meta name="description" content="<%= config.description %>">
