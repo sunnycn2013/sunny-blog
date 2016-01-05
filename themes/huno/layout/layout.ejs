@@ -38,28 +38,26 @@
     %>
 
     <title>
-      <%= title %>  <%=config.keyword %>
+    <%= title %>  <%=config.keyword %>
     </title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <% if (config.author){ %>
-      <meta name="author" content="<%= config.author + '|'+ config.descriptions %>">
+    <meta name="author" content="<%= config.descriptions %>">
     <% } %>
     <% if ( is_home() && config.description){ %>
-      <meta name="description" content="<%= config.description %>">
+    <meta name="description" content="<%= config.description %>">
     <% } %>
-    <meta name="baidu-site-verification" content="dDShp3YniR" />
-    <%- open_graph({title: title}) %>
-    
+      <%- open_graph({title: title}) %>
     <% if (theme.rss){ %>
-      <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+    <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
     <% } %>
     <% if (theme.favicon){ %>
-      <link rel="icon" type="image/x-icon" href="<%- theme.favicon %>">
+    <link rel="icon" type="image/x-icon" href="<%- theme.favicon %>">
     <% } %>
     <%- css('css/uno.css') %>
     <%- css('css/highlight') %>
     <%- css('css/archive.css') %>
+    <meta name="baidu-site-verification" content="dDShp3YniR" />
 
 </head>
 <body>

@@ -5,6 +5,7 @@ subtitle:   "漫谈iOS AOP编程之路"
 date:       2015-10-24
 author:     "Scenery"
 logo: "avatar.png"
+keywords: "iOS AOP iOS切面编程 spect Oriented Programming 反射 runtime reflact "
 description: "　面向切面编程(也叫面向方面)：Aspect Oriented Programming(AOP),是目前软件开发中的一个热点。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。　　AOP是OOP的延续，是（Aspect Oriented Programming）的缩写，意思是面向切面（方面）编程。　　主要的功能是：日志记录，性能统计，安全控制，事务处理，异常处理等等。　　主要的意图是：将日志记录，性能统计，安全控制，事务处理，异常处理等代码从业务逻辑代码中划分出来，通过对这些行为的分离，我们希望可以将它们独立到非指导业务逻辑的方法中，进而改  变这些行为的时候不影响业务逻辑的代码。"
 tags:
     - iOS
