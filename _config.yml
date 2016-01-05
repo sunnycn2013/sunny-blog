@@ -75,8 +75,8 @@ disqus_shortname: wwwccguocn
 
 #社交模块
 social:
-  weibo: ccguo
-	github: sunnyvalue
+  weibo: http://weibo.com/sunnycn
+	github: https://github.com/sunnyvalue
 	twitter: ccguo
 	mail: 389878212@qq.com
 	stackoverflow: ccguo

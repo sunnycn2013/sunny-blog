@@ -1,5 +1,6 @@
 ---
 title:      "React-Native牛刀小试仿京东砍啊砍砍到你手软 "
+keywords : "React-Native仿京东砍啊砍 React-Native React iOS facebook推出了ReactNative框架 "
 description: "几个月前facebook推出了ReactNative框架，允许开发着使用javascript代码来实现iOS原生的应用，随后十月份安卓版的也相继问世，从此我们可以优雅的Learn once write anywhere,早在几年前开发者就开始使用javascript＋html和PhoneGap来编写各式各样的app了，开发者可以优雅的完成一套js的shell，然后分别在不同的平台下进行打包，最终生成不同平台的app，知识app的最终的展现形式都是html类型的。一度曾经出现webapp是否要取代native，这么多年过去，结果大家也不言而知了。但是reactnative的确是一个很了不起的东西，开发者们都不禁为之欢呼，react native所展现出来的应用实质上是native应用，开发者完成同一套js代码，分别在iOS和安卓平台下分别打包最终分别能映射生成分属不同的安卓原生应用与iOS原生应用，这个优势可能是目前为止被广大开发最为喜欢的地方，一直以来webapp最为大家所诟病的可能就是html的页面永远无法与原生页面的体验相比拟"
 date:       2015-11-9
 author:     "Scenery"

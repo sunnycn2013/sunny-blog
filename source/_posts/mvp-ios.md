@@ -4,6 +4,7 @@ title:      "基于面向协议MVP模式下的软件设计－iOS篇 "
 subtitle:   "基于面向协议MVP模式下的软件设计－iOS篇 "
 date:       2015-12-22
 author:     "Scenery"
+keywords: "MVP 面向协议编程 业务分离 MVC＋ 基于面向协议MVP模式下的软件设计 设计模式"
 description: "第一次听到MVC这个名词是在C#中，相信做对于MVC大家都已经很熟悉了，作为一种软件设计模式，MVC这个概念已经诞生好多年了，模型-视图-控制器（Model-View-Controller，MVC）是Xerox PARC在20世纪80年代为编程语言Smalltalk－80发明的一种软件设计模式，至今已广泛应用于用户交互应用程序中。在iOS开发中MVC的机制被使用的淋漓尽致，充分理解iOS的MVC模式，有助于我们程序的组织合理性"
 header-img: "img/post-bg-alitrip.jpg"
 tags:
