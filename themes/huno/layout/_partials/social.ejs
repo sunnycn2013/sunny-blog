@@ -43,24 +43,19 @@ classes that you can use:
     icon-mail
 
 -------------------------------->
-
 <!-- add social info here -->
-
 <% if (config.social) { %>
-
 <nav class="cover-navigation navigation--social">
   <ul class="navigation">
-
      <% if (config.social.weibo) { %>
       <!-- weibo -->
       <li class="navigation__item">
         <a href="<%= config.social.weibo %>" title="Huno on weibo">
-          <img src="/images/sina-weibo.svg" alt="" width="20" height="20">
+          <img src="/images/sina-weibo.png" alt="" width="20" height="20">
           <span class="label">weibo</span>
         </a>
       </li>
      <% } %>
-
     <% if (config.social.github) { %>
       <!-- Github -->
       <li class="navigation__item">
@@ -69,9 +64,7 @@ classes that you can use:
           <span class="label">GitHub</span>
         </a>
       </li>
-
     <% } %>
-
      <% if (config.social.twitter) { %>
       <!-- twitter -->
       <li class="navigation__item">
@@ -81,7 +74,6 @@ classes that you can use:
         </a>
       </li>
     <% } %>
-
       <% if (config.social.stackoverflow) { %>
       <!-- stack-overflow -->
       <li class="navigation__item">
@@ -91,7 +83,6 @@ classes that you can use:
         </a>
       </li>
     <% } %>
-
     <% if (config.social.mail) { %>
       <!-- mail -->
       <li class="navigation__item">
@@ -101,8 +92,6 @@ classes that you can use:
         </a>
       </li>
      <% } %>
-
   </ul>
 </nav>
-
 <% } %>

@@ -4,9 +4,7 @@
 <% } else { %>
 <header class="panel-cover panel-cover--collapsed">
 <% } %>
-
   <div class="panel-main">
-
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
 
@@ -17,17 +15,14 @@
         <h1 class="panel-cover__title panel-title">
           <a href="/" title="link to homepage"><%= config.title %></a>
         </h1>
-
         <span class="panel-cover__subtitle">
             <%= config.subtitle %> 
         </span>
         <hr class="panel-cover__divider" />
-
         <% if (config.description) { %>
         <p class="panel-cover__description">
             <%= config.description %>
         </p>
-
         <hr class="panel-cover__divider panel-cover__divider--secondary" />
         <% } %>
 
@@ -50,7 +45,9 @@
                     nav_btn_class = '';
                   }
                 %>
-                <li class="navigation__item"><a href="<%- theme.menu[i] %>" title="" class="<%= nav_btn_class %>"><%= i %></a></li>
+                <li class="navigation__item">
+                <a href="<%- theme.menu[i] %>" title="" class="<%= nav_btn_class %>"><%= i %></a>
+                </li>
               <% } %>
 
             </ul>
