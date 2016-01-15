@@ -12,8 +12,6 @@ tags:
 
 
 
-## React-Native牛刀小试仿京东砍啊砍砍到你手软
-
 
 ### React-Native基础教程
 
