@@ -395,7 +395,7 @@ body {
   content: "\f16c"; }
 
 .icon-mail:before {
-  content: "\f16d"; }
+  content: "\f064"; }
 
 .icon-male-female:before {
   content: "\f16e"; }
@@ -671,7 +671,7 @@ body {
   content: "\f1c8"; }
 
 .icon-social-github:before {
-  content: "\f1c9"; }
+  content: "\f09b"; } /*\f1c9*/
 
 .icon-social-google-plus:before {
   content: "\f1ca"; }
@@ -737,13 +737,13 @@ body {
   content: "\f1de"; }
 /* add by sunny  weibo \f18a  content:"\f33f"; */
 .icon-social-weibo:before {
-  content:"\f33f"; }
+  content:"\f18a"; }  /*\f33f*/
 
 .icon-social-renren:before {
   content:"\f18b"; }
 
 .icon-social-stack-overflow:before {
-  content: "\f1df"; }
+  content: "\f16c"; }
 
 .icon-social-steam:before {
   content: "\f1e0"; }
@@ -758,7 +758,7 @@ body {
   content: "\f1e3"; }
 
 .icon-social-twitter:before {
-  content: "\f1e4"; }
+  content: "\f099"; } /*\f1e4*/
 
 .icon-social-vimeo:before {
   content: "\f1e5"; }
