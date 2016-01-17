@@ -71,7 +71,9 @@ pagination_dir: page
 theme: huno #light #huno
 
 # 评论模块
-disqus_shortname: wwwccguocn
+disqus_shortname: sunnycn21
+PAGE_URL: http://sunnycn.gitcafe.io/
+PAGE_IDENTIFIER: sunnycn21
 
 #社交模块
 social:
