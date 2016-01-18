@@ -4,9 +4,9 @@
     <% if(page.prev){ %>
        <span class="read-more-item-dim">最近的文章</span>
        <h2 class="post-list__post-title post-title">
-       <a href="<%- config.root %><%- page.prev.path %>" title="link to " class="read-more-link-title"> <%= page.prev.title%>
+       <a href="<%- config.root %><%- page.prev.path %>" title="link to " class="read-more-link-title"> <%= page.prev.title.substr(0,14) %>
        </a></h2>
-       <p class="excerpt"><%- page.prev.description %> &hellip;</p>
+       <p class="excerpt"><%- page.prev.description.substr(0,200) %> &hellip;</p>
        <div class="post-list__meta">
        <time datetime="{{date format="DD MMM YYYY"}}" class="post-list__meta--date date">
        <%= date(page.prev.date, config.date_format) %>
@@ -20,9 +20,9 @@
     <% if(page.next){ %>
        <span class="read-more-item-dim">更早的文章</span>
        <h2 class="post-list__post-title post-title">
-       <a href="<%- config.root %><%- page.next.path %>" title="link to "><%= page.next.title%></a>
+       <a href="<%- config.root %><%- page.next.path %>" title="link to "><%= page.next.title.substr(0,14)%></a>
        </h2>
-       <p class="excerpt"><%- page.next.description %>&hellip;
+       <p class="excerpt"><%- page.next.description.substr(0,150) %>&hellip;
        </p>
        <div class="post-list__meta">
        <time datetime="{{date format="DD MMM YYYY"}}" class="post-list__meta--date date">
