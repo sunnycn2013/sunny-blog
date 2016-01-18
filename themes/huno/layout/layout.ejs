@@ -6,8 +6,7 @@
     <script src="<%- config.root %>js/jquery.min.js"></script>
     <script src="<%- config.root %>js/main.js"></script>
     <script src="<%- config.root %>js/scale.fix.js"></script>
-    <%
-    var title = page.title || '';
+    <%var title = page.title || '';
     if (is_archive()) {
       title = __('archive_title');
       if (is_month()) {
@@ -53,15 +52,14 @@
     </span>
     <%- partial('_partials/side-panel') %>
     <div class="content-wrapper">
-        <div class="content-wrapper__inner entry">
-            <%- body %>
-            <%- partial('_partials/footer') %>
+        <div class="content-wrapper__inner entry"> <%- body %>
+        <%- partial('_partials/footer') %>
         </div>
     </div>
-    <%- partial('_scripts/mathjax') %>
+    <%- partial('_scripts/mathjax') %> 
     <%- partial('_scripts/awesome-toc') %>
     <%- partial('_scripts/site-analytics') %>
-    <%- partial('_scripts/github-repo-widget') %>
+    <%- partial('_scripts/github-repo-widget') %> 
     <%- partial('_scripts/killie6') %>
 </body>
 </html>

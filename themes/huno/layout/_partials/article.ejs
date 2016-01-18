@@ -5,27 +5,22 @@
     <% if (type == 'post') { %>
     <div class="post-meta">
       <time datetime="<%= date(post.date, config.date_format) %>" class="post-meta__date date"><%= date(post.date, config.date_format) %></time>
-      <span class="post-meta__tags tags">
-          <% if (post.categories && post.categories.length > 0){ %>
-            <font class="categories">
-            &#8226; 分类:
+      <span class="post-meta__tags tags"><% if (post.categories && post.categories.length > 0){ %>
+            <font class="categories">&#8226; 分类:
             <%- list_categories(post.categories, {
               show_count: false,
               class: 'categories',
               style: 'none'
             }) %>
-            </font>
-          <% } %>
-          <% if (post.tags && post.tags.length > 0){ %>
-             &#8226; 标签:
+            </font><% } %>
+          <% if (post.tags && post.tags.length > 0){ %> &#8226; 标签:
             <font class="tags">
               <%- list_tags(post.tags, {
                 show_count: false,
                 style: 'none',
                 class: 'tags'
               }) %>
-            </font>
-          <% } %>
+            </font><% } %>
       </span>
     </div>
     <% } %>
@@ -36,4 +31,3 @@
   <%- partial('disqus') %>
   <%- partial('duoshuo') %>
 </article>
-
