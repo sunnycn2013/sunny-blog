@@ -383,7 +383,7 @@ body {
   content: "\f168"; }
 
 .icon-list:before {
-  content: "\f169"; }
+  content: "\f03a"; }  /*\f169*/
 
 .icon-lock:before {
   content: "\f16a"; }
@@ -908,7 +908,7 @@ body {
   content: "\f215"; }
 
 .icon-x-circle:before {
-  content: "\f216"; }
+  content: "\f106"; } /*\f216*/
 
 .icon-x:before {
   content: "\f217"; }
