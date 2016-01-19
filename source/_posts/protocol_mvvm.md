@@ -109,25 +109,25 @@ ReactiveCocoa在处理View－>Model，Model－>View已经封装慌的很好了�
 
 一种基于面相协议的MVVM
 ```
-- API  						与serve端API对接工具	(相当于客户端的数据访问层)
-	- BaseAPI   			提供基础的服务
-	- CartAPI   			基于购物车的API集合，提供相关的API服务
-- Protocol      		    基础协议层
+- API                       与serve端API对接工具	(相当于客户端的数据访问层)
+	- BaseAPI               提供基础的服务
+	- CartAPI               基于购物车的API集合，提供相关的API服务
+- Protocol                  基础协议层
 	- CartProbeProtocol    探针器 主要为所有的cell提供计算cell高度、呈递数据、传入事件处理
 	- CartRenderProtocol   渲染协议 主要为Model提供渲染目标视图
 	- CartFloorProtocol    通用Model楼层协议，为大楼层的提供公共属性
-- Model          			实体层 Entity  		(数据实体层)
-	- CartModel     		购物车基础实体集合
-	- CartSkuModel  		商品Model
-	- CartHeaderModel 		分类title Model
-- View          			基础UI层 主要提供基础的视图 (基础View层)
-	- view					自定义View
-- Cell          			Cell (cell集合)
-	- CartTableViewCell   	公共集合
-	- CartHeaderTableCell 	头视图cell
-- ViewModel         		ViewModel 主要完成针对控制器的拆分 (相当于业务；逻辑层)
-	- CartViewModel  		内部封装了购物车相关的各种业务逻辑(数据拉取、数据更新、数据删除)
-- Controller 				控制器胶水层  (控制器层)
+- Model                    实体层 Entity  (数据实体层)
+	- CartModel            购物车基础实体集合
+	- CartSkuModel         商品Model
+	- CartHeaderModel      分类title Model
+- View                     基础UI层 主要提供基础的视图 (基础View层)
+	- view	               自定义View
+- Cell                     Cell (cell集合)
+	- CartTableViewCell    公共集合
+	- CartHeaderTableCell  头视图cell
+- ViewModel                ViewModel 主要完成针对控制器的拆分 (相当于业务；逻辑层)
+	- CartViewModel        内部封装了购物车相关的各种业务逻辑（数据拉取、数据更新、数据删除）
+- Controller 		       控制器胶水层  (控制器层)
 ```
 ###### API层
 客户端API层职能类似于传统的数据访问层，这里封装了基本的网络请求对象、service地址以及，回调处理等，等操作。API层主要用于ViewModel层的调用，关于客户端请求交互的模块全部都是由API层来完成，此处完主要成了业务模块针对网络请求层次的剥离抽取。
