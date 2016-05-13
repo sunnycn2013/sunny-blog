@@ -10,7 +10,7 @@ tips: sunnycn.gitcafe.io - 我维护的 iOS 使用技巧分享网站，每周三
 descriptions: "关于前端与iOS、React,ReactNative、黑客与画家 | 如画，Web & Mobile Lover，iOS Engineer,移动端 | 这里是 @风之痕 的个人博客，与你一起发现更大的世界。"
 keyword: "iOS, 移动端,前端, C#,风之痕, 风之痕的博客,@sunnyvalue,@Charles的博客,@xianbin的博客, 个人网站, 互联网, 前端, 设计, 产品"
 author: sunny
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -68,7 +68,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: huno #light #huno
+theme: next-master #light #huno
 
 # 评论模块
 disqus_shortname: sunnycn21
@@ -110,10 +110,10 @@ friends: [
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repository: https://gitcafe.com/sunnycn/sunnycn.git
-  branch: gitcafe-pages
+  # type: git
+  # repository: https://git.coding.net/ccpainting/sunnyblog.git
+  # branch: coding-pages
 
-  #type: git
-  #repository: https://github.com/sunnyvalue/sunnyvalue.github.io.git  
-  #branch: master
+  type: git
+  repository: https://github.com/sunnyvalue/sunnyvalue.github.io.git  
+  branch: master
