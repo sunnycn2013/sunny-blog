@@ -1,3 +1,18 @@
+---
+
+title:      "浅谈iOS架构设计"
+keywords :  "浅谈iOS架构设计"
+description: "iOS自身的开发特性是基于MVC的来构建的，随着业务场景变得愈发复杂，引入了MVVM。无论是MVVM还是MVP都是只是针对表现层代码的逻辑性质做了进一步的分割，使得代码的维护更加有章可循、有据可守。Presenter层（顾名思义，主持人 表演者的意思）在WPF的页面绑定中担任持有、变更数据。bind数据的角色，MVP也正是有此处诞生，整体来说类似于Controller层。相对ViewViewModel层可能担任的角色更为广泛，除了需要处理一些数据的持有、获取、网络之外还需要担任一部分UI的特有的属性以及接口工作。更通俗一点来讲viewModel要处理的相关的一些操作范围更广、更容易成为一个无法从质上作出定义的一个实质存在。曾经有段时间社区里面流行一种叫做面向协议的编程规范，在大综业务场景模式下(如：大量同类型业务场景的商品、视图、cell、操作)如果真对每一种特例都去对应的枚举处理，其结果难以想象。这一点借鉴了Java 中接口式编程的法则，真对同一类型的事物抽象出公共的协议，在实际吃的操作过程中统一采用id<protocal>的形式去完成，这一点充分也体现了oop思想里面的多态性的思想.曾经有人这样问我，你们iOS的客户端采用了什么样的架构。当时我想来想去没有一个比较合适的回答，结果反倒被对方反问：是三层架构吗？我已经不太记得当时的回答了，大概意思只是说了一些客户端与服务端一些本质区别内容的回答。事后我想了很久，也反思了很久。再到后来我渐渐的画出了自己的答案。在传统的服务端最初为了实现基本业务的分离诞生了基本的三层模型,<img src='http://7xtyxb.com1.z0.glb.clouddn.com/sanceng.png' width='584' height='404'></img>"
+date:       2016-05-18
+author:     "风之痕的博客"
+
+tags:
+    - iOS
+    - iOS架构设计
+    - 电子商务
+  
+---
+
 ### 浅谈iOS架构设计
 
 - 浅谈iOS架构设计
@@ -68,18 +83,204 @@ iOS自身的开发特性是基于MVC的来构建的，随着业务场景变得�
 
 在整体的业务布局中，作为某条业务线上的一个coder，每个人都只是一个螺钉的作用（自从进入到现在团队感觉自己能接触东西越来越专注一个方向，同样也是越来越单一，私底下不得不尝试着去做主动学习一些其它的）在大的业务场景下，有些需求可能不是座位一个开发的角度所能考虑到的。作为战略化的考虑我们也会面临着这样的场景，将某个模块完全拷贝到另一个工程中去跑（类似于聚划算这样的）。这一点对模块的独立性、隔离程度要求都是相对比较高的。
 
-客户端为什么会走向组件化，这样做有什么对应的目的。组件化最重的目的是为了最终实现模块的隔离。
+客户端为什么会走向组件化，这样做有什么对应的目的。组件化最重的目的是为了最终实现模块的隔离,模块与模块实现完全解耦。在软件发展的环节中，随着时间的逐步推进，最终都会施行分治的手段去管理、维护。组件化的思想也是来源于此。服务端的程序会随着业务模块的迭代、用户访问量的叠加进而做对应的系统分隔、多元化部署等。相对客户端而言，我们可以针对不同的模块做分治处理，也就是组件化。在实际的开发过程中各团队之间只负责维护自己的模块，相互之间从程序以及业务上遵循高内聚、低耦合的原则，从而更加有效的提高项目开发与管理的效率进而节省人力物力财力。
 
 iOS组件化与安卓组件化的对比此处就不做对比了，安卓组件化能做的会比iOS更多。此处只谈iOS平台相关的组件化。
+
+###### 聊聊组件化
 关于组件化的文章，之前有蘑菇街的组件化的文章，不少人对此也褒贬不一。整体来说组件化的工作愈发必然，但终归到底要不要统一的按照一种特定的模式去做却是不尽必然。整体来讲蘑菇街的大体上分几块入手：业务拆分剥离、统一跳转组件化、核心模块集成化、UI控件统一化。其中统一跳转蘑菇街采用了一种类似于OpenUrl:"mgj:/*"的形势，可能这样做为了迎合iOS中自身的一种唤醒规范，这一点备受诟病（没有必要非的做的根系统一模一样，费神又费力...）
 
+其实组件化也无外乎以上几种模型，可能只是大家针对具体的实施各有差异而已，下面简要的从几个比较典型的场景介绍一下现有工程中常用的一些手段。
 
+###### 业务分隔
+在整个软件结构体系中业务划分这块也算是家常便饭，可能在中小型公司里面业务比较单一，开发人员相对单一。整个软件的开发就是在同一个目录下不断的迭代(具体就不多说了)。具体的划分原则就不多说了，上文也有提及到。聊下目前的现状，目前客户端的开发人员主要根据业务划分而划分。具体的组负责具体的业务模块，每个组涉及到的业务范围不同，业务属性不同，对开发人员的要求更是不同。完全分隔化，更加有利于每个人专注自己模块，也更加有利于模块的稳定性。相信大家针对Apple提交应用的一些诟病已经由来已久了(iOS的发版上线永远只有一次机会，没有像安卓那样的灰度发布，这也是iOS从业人员诱发心脏病的因素之一)。
+
+业务与开发人员分隔，最终还是要将所有的模块从新合并在一起打包上传应用商店。整个过程仍旧遵循原有的套路，业务分隔只是为了进一步提高管理效率。
+###### 统一跳转
+真对电商客户端来讲，各式各样的跳转就不多说了。原生相互跳转、M中执行原生跳转、唤醒跳转。统一跳转组件算是一个不可忽视的一个模块。
+统一化jump组件统控全局，作为全局工程的一个组件而存在。其它模块只需要调用统一化jump组件就可以实现页面跳转，无需关心具体的目标页面、无需关注更多的一些关于jump的代码。
+
+现有客户端中没有采用类似蘑菇街那种看似华丽实则繁琐的手段。首先每个页面还是采用对应的ActionName与对应的ActionDes来区分的。原生页面对应的每个模块都有对应的别名映射表，这个表是在服务端维护的，服务端下发不同的跳转事件，统一采用页面别名来划分。
+
+统一化组件采用协议做为传入标准，相关的模块如要执行跳转行为只需要调用统一化组件传入对应的遵循协议的对象即可，其它无序关注。
+
+```
+@protocol UARouterDelegate <NSObject>
+
+@property (nonatomic,strong) NSString     * actionType;      //事件类型
+@property (nonatomic,strong) NSString     * actionPurpose;   //目标页面
+@property (nonatomic,strong) NSString     * actionSelector;  //页面初始化函数
+@property (nonatomic,strong) NSDictionary * actionParams;    //页面参数
+@property (nonatomic,strong) NSString     * actionEventId;   //事件ID
+@property (nonatomic,strong) NSString     * actionOrderId;   //订单参数
+@property (nonatomic,strong) NSString     * actionShareInfo; //分享
+
+@end
+
+@interface UARouter : NSObject
+
++ (instancetype)shareInstance;
+
++ (BOOL)analysisProtocolAndJumpToPage:(id<UARouterDelegate>)router;
+@end
+
+```
+UARouter中作乐大量的封装性工作，只要针对actionPurpose做定向的处理性工作，也无妨也可以自行传入自己的初始化actionSelector和参数。另外相关的事件打点参数以及订单路径纪录参数也可以根据具体的场景实时的传入。
+
+###### 打点模块
+打点模块无外乎就是记录一些点击、pv等，现有工程中的打点气出也考虑过痛过自动打点来完成，这方面也曾经被许多人追问为何不采用自动打点。问题终归需要有一方来善终，最终的结论是当前的客户端业务打点场景太过于繁琐，数据逻辑太过于复杂不适合采用自动打点。
+
+聊到自动打点不得不说一些，自动打点主要就是采用hook（或者你理解叫AOP）的手段，将切片操作放在你想安置的位置（如果viewWillAppear：UIButton点击位等）具体手段就不多少了，可以参照针对[AOP的理解](http://sunnycn2013.github.io/2015/10/24/aop-ios/)。
+
+目前的埋点主要由点击、性能、异常、PV、订单等业务场景，这一层组件的主要目的主要为外部提供一个统一化的打点入口，暂时可以理解针对打点SDK的进一步封装，如果中间打点SDK的逻辑或者接口发生了变化针对业务不会象湖影响，另外如果业务方需要传入参数的话也可以统一按照当前统一化组件的约定方式去传值。
+
+```
+typedef NS_ENUM(NSInteger,UAPageLevel){
+    kPageLevel_1 = 1,
+    kPageLevel_2,
+    kPageLevel_3,
+    kPageLevel_4,
+    kPageLevel_5,
+};
+
+@interface UATrack_Interface : NSObject
+
++ (instancetype)shareInstance;
+
+/**
+ *  点击事件
+ *
+ *  @param eventID    事件Id
+ *  @param parameters 点击事件参数
+ */
++ (void)uatrack_event_click:(NSString *)eventID parameters:(NSDictionary *)parameters;
+
+/**
+ *  pv事件
+ *
+ *  @param pageName   当天页面className
+ *  @param parameters pv相关参数
+ */
++ (void)uatrack_event_pv:(NSString *)pageName parameters:(NSDictionary *)parameters;
+
+/**
+ *  异常事件统计
+ *
+ *  @param eventID    异常事件Id functionId
+ *  @param parameters 异常信息参数
+ */
++ (void)uatrack_event_exception:(NSString *)eventID parameters:(NSDictionary *)parameters;
+
+/**
+ *  订单事件统计
+ *
+ *  @param orderID    事件Id
+ *  @param pageLevel  事件级别
+ *  @param parameters 事件参数
+ */
++ (void)uatrack_event_order:(NSString *)orderID pageLevel:(UAPageLevel)pageLevel parameters:(NSDictionary *)parameters;
+
+/**
+ *  性能统计
+ *
+ *  @param eventID    事件Id
+ *  @param start      开始时间
+ *  @param end        结束时间
+ *  @param parameters 性能参数
+ */
++ (void)uatrack_event_performance:(NSString *)eventID start_ts:(NSString *)start end_ts:(NSString *)end parameters:(NSDictionary *)parameters;
+
+@end
+
+```
+
+###### 商品详情
+在插件话的过程中，除了基本的一些基础功能模块以外可以做对应的插件话以外，我们在业务做出分隔的任何一个模块都是可以满足的。我们经常使用的App，例如淘宝、天猫、聚划算，狗厂的京东来点、咚咚、到家目前还是M插件等，可能针对用户来讲当打开淘宝客户端会看到首页快捷入口配置的天猫或者聚划算入口。从开发角度上来讲，这些应用都是由不同的团队来完成的，最终拷贝到相关联的功能内部，实现无缝衔接，这样某个相关的业务就可以实现完美接入了。
+
+从业务来讲在公司大范围框架场景很可能会出现类似的场景，大boss们从战略的角度考虑问题不是一个码农可以理解的。如果程序相互之间耦合度十分严重，工作量就大了。另外针对某个对应的模块，本身也是需要对外提供相关性的调用入口的，这些入口如果是遵循协议的形势相对就比较灵活。模块的内部的API一般情况不可能是从头到尾一成不变的，每一次代码的重构都涉及到API的新增和废弃，如果每次废弃API都需要通知所有调用方去改动，早晚会被领导干掉的。
+
+此处采用商品详情页面的业务逻辑做部分抽象处理，相对来说本文只只讲解一些思路和手段，具体的还需要根据具体的场景以及代码结构做部分调整。Demo中文件结构如下：
+
+<img src="http://7xtyxb.com1.z0.glb.clouddn.com/product_detail.png" width="316" height="207"><img>
+
+<strong> ProductDetailManager 文件代码如下： </strong> 
+
+```
+@protocol ProductDetailManagerProtocol <NSObject>
+
+/**
+ *  其他相关约定协议
+ */
+
+@end
+
+@interface ProductDetailManager : NSObject
+
+
++ (instancetype)shareInstance;
+
+/**
+ *  处理商详页面跳转
+ *
+ *  @param skuId sku
+ */
++ (void)showProductDetailWithSkuNum:(NSString *)skuId;
+
+/**
+ *  处理跳转
+ *
+ *  @param product model
+ */
++ (void)showProductDetailWithProductModel:(ProductDetailModel *)product;
+
+/**
+ *  处理商品加购物车
+ *
+ *  @param product model
+ *
+ *  @return bool
+ */
++ (BOOL)addProductToCartWithProductModel:(ProductDetailModel *)product;
+
+@end
+
+```
+
+整个商品页面模块只暴露给外部ProductDetailManager.h使用，相关商品页面具体的函数入口全部封装在ProductDetailManager.m内部，如果商品页面内部API发生变化，不会影响工程中其它相关的业务代码，从而实现业务模块之间的相互独立。
+
+<strong>备注：</strong>
+
+在现实的开发模块中除了做插件化以外，在项目的持续集成过程中或多或少也会面临着其它的一些问题，在我们完成插件化的工作以后，这些相关的问题都可以得到很好的解决。大一点的团队中代码的安全显得愈发重要，之前的苏宁易购代码泄漏事件无非是给广大开发者上了很好的一课。
+
+像京东、淘宝这样的团队安全性这些都更佳不用过多的形容。客户端中还是存在着不少比较敏感的模块，诸如核心网络层、支付逻辑、安全登录、CPA、秒杀等。在插件化的基础上我们完全可以将这些对应的模块集成对应的静态库（SDK的形式），将相关的插件化调用入口的头文件public出来供外部阅读，并附上相关的文档。
+
+另外随着持续集成的迭代，一个更佳痛苦的问题git目录过大，编译起来耗时，采用模块SDK化的形式集成以后，每个业务组只需要在本组独有的分支上进行进行开发，这样就可以极大的节省了耗时的缺陷。另外sdk同意采用cocoapod私有仓库的形式来管理，最终大包上传的时间只需要提包人员统一 "pod update"然后再进行打包上传即可。
 
 ##### 网络层DNS预解析
+
+###### DNS解析的原理
+随着客户端优化成都的进一步加深，从早期的基于优化网络请求的body、数据格式、gzip压缩等渐渐继续忘底层压缩。网络层的优化进一步针对DNS进行优化。
+
+一般情况下网络层的请求方式大题分集约型和离散型，具体那一种比较有优势此处就不多说了。由于IP本身具有不稳定性，如果机房做了迁移，我们不可能针对已经发出去的版本做domain切换的。所以一般在客户端中都采用使用域名的形式。使用域名就会面临着有DNS的劫持的风险。
+
+域名劫持不仅无法及时的进行监控，很大程度上极大的有损用户体验。我们都知道采用域名发起请求后，首先会找到距离最近的DNS服务器解析成对应的IP，然后根据IP直接找到对应的服务器。关于DNS为什么被劫持以及如果优化的思路可以参照文章[【鹅厂网事】全局精确流量调度新思路-HttpDNS服务详解](http://mp.weixin.qq.com/s?__biz=MzA3ODgyNzcwMw==&mid=201837080&idx=1&sn=b2a152b84df1c7dbd294ea66037cf262&scene=2&from=timeline&isappinstalled=0&utm_source=tuicool)。
+
+###### 客户端中针对DNS预解析的实现原理及手段
+客户端实现预解析的手段大概分以下步骤，首先由于客户端自身的一些因素无法尝试去做一台自解析的工作，客户端只能使用现有的解析结果。
+
+具体思路如下： 客户端在每次启动时间可以动态的去请求DNS预解析的接口，尝试并获取一个IP映射表，之后的时间，如果获取成功网络在发起request时刻可以优先采用ip+服务名的形式去请求数据，如果不成功则仍旧采用域名的形式。将预解析的工作专门交给一台对应的预解析服务器去完成，客户端每次使用已经优化处理好的解析结果。这样就能最大限度的的省去网络请求过程中DNS解析的时间。
 
 
 ##### 图片资源服务器
 
+###### 关于图片静态资源的一些常用处理手段
+在前端开发中，围绕图片相关的优化是比较常见的一个课题。糯米组件化框架在这个点上，主要实现了统一图片延时加载和资源代理，资源代理的流程大致如下：
+
+<img src="http://7xtyxb.com1.z0.glb.clouddn.com/img.png" width="639" height="414"></img>
+
+当业务组件发起图片请求时，组件化框架的资源代理会根据运行平台以及系统版本拦截请求进行优化处理，例如转发到图片代理服务，由图片代理服务进行webp转换等，这样也有注于域名收敛。
+
+通过资源代理的方式，组件化框架将图片优化任务收敛至一处，并且使得开发者可以更关注业务本身。
 
 [蘑菇街 App 的组件化之路](http://www.360doc.com/content/16/0316/13/25724933_542663459.shtml)
 
