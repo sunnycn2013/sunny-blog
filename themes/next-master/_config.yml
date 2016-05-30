@@ -242,6 +242,9 @@ mathjax:
 
 # Disqus
 #disqus_shortname:
+disqus_shortname: sunnycn21
+PAGE_URL: http://sunnycn.gitcafe.io/
+PAGE_IDENTIFIER: sunnycn21
 
 # Baidu Share
 # Available value:
